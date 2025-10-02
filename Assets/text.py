@@ -1,2 +1,3 @@
 intro_text = "\nLong ago, the allfather Odin united the nine realms: Muspelheim, Niflheim, Vanaheim, Alfheim, Jotunheim, Niðavellir, Midgard and Asgard\nBut there was another secret tenth realm. This realm was used to cast away odin's foes and was later cut away from the world tree\nto be condemed to drift away in exile for eternity.\n\nBut recently his enemies have grown an formidable army and are wreaking havoc in the tenth realm\nBecause of this, odin has sent you, a prisoner, to fix his problems\ndefeat the Goblin king Yagluth and earn your freedom\n\n"
 welcome = "welcome to ..."
+battle_info = ""

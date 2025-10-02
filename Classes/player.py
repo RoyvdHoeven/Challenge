@@ -17,7 +17,7 @@ class player:
             self.hp = self.max_hp
         else:
             self.hp += item.hp
-            self.items.remove(item)
+        self.items.remove(item)
         print(f"{self.name} healed {item.hp} hp\nRemaining hp: {self.hp}")
 
         

@@ -3,8 +3,11 @@ from time import sleep
 from Assets.ascii_art import ascii_text
 from Classes.player import player
 from Classes.enemy import enemy
+from Assets.text import battle_info
 
 def battle(player: player, enemy: enemy):
+    print(f"You've encountered an {enemy.name}")
+    sleep(1)
     print(ascii_text[0])
     sleep(1)
     while player.hp > 0 and enemy.hp > 0:
@@ -51,7 +54,7 @@ def enemy_turn(player: player, enemy: enemy):
         print("missed")
 
 def player_turn(player: player, enemy: enemy):
-    print("1. Fight\n2. Items")
+    print("1. Fight\n2. Items\n3. Info")
     choice: str = input("What do you want to do: ")
     match choice:
         case "1":
@@ -85,11 +88,21 @@ def player_turn(player: player, enemy: enemy):
                 i += 1
             print("0. Go back")
             item_choice = int(input("What item do you want to use: "))
-            if item_choice == 0:
-                player_turn(player, enemy)
-            elif item_choice < len(player.items):
+            if item_choice <= len(player.items) and item_choice > 0:
                 print(f"used {player.items[item_choice - 1].name}")
                 player.heal(player.items[item_choice - 1])
+            else:
+                player_turn(player, enemy)
+        case "3":
+            info_choice = input("1. Combat\n2. Healing items\n0. Go back\nOn what do you need info: ")
+            match info_choice:
+                case "1":
+                    pass
+                case "2":
+                    pass
+                case _:
+                    player_turn(player, enemy)
+
         case _:
             player_turn(player, enemy)
 
