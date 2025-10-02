@@ -8,13 +8,13 @@ from Assets.text import *
 
 def main():
     player_name: str = input("Please enter your name: ")
-    # sleep(0.5)
-    # for char in intro_text:
-    #     sleep(0.075)
-    #     print(char, end='', flush=True)
-    # for char in welcome:
-    #     sleep(0.3)
-    #     print(char, end='', flush=True)
+    sleep(0.5)
+    for char in intro_text:
+        sleep(0.075)
+        print(char, end='', flush=True)
+    for char in welcome:
+        sleep(0.3)
+        print(char, end='', flush=True)
     sleep(1)
     print(title_screen)
     sleep(2)
