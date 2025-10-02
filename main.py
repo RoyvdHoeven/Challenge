@@ -3,16 +3,26 @@ from Classes.player import *
 from Classes.enemy import enemy
 from Classes.item import item
 from time import sleep
-from Functions.ascii_art import title_screen
+from Assets.ascii_art import title_screen
+from Assets.story import *
 
 def main():
+    player_name: str = input("Please enter your name: ")
+    sleep(0.5)
+    for char in intro_text:
+        sleep(0.075)
+        print(char, end='', flush=True)
+    for char in welcome:
+        sleep(0.3)
+        print(char, end='', flush=True)
+    sleep(1)
     print(title_screen)
     sleep(2)
-    player_name: str = input("Please enter your name: ")
     main_character = player(player_name, 20, 20, 5, 4)
     main_character.add_item(healing_potion)
     main_character.add_item(large_healing_potion)
     battle(main_character, goblin)
+
 
 goblin = enemy("Goblin", 20, 3, 3)
 healing_potion = item("Healing potion", 5)

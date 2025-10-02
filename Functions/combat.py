@@ -1,6 +1,6 @@
 from Functions.dice_roll import d20, d8
 from time import sleep
-from Functions.ascii_art import ascii_text
+from Assets.ascii_art import ascii_text
 from Classes.player import player
 from Classes.enemy import enemy
 
@@ -24,6 +24,7 @@ def battle(player: player, enemy: enemy):
         sleep(2)
         print(ascii_text[1])
     elif enemy.hp <= 0:
+        print(f"{enemy.name} died")
         sleep(2)
         print(ascii_text[2])
 
@@ -86,7 +87,7 @@ def player_turn(player: player, enemy: enemy):
             item_choice = int(input("What item do you want to use: "))
             if item_choice == 0:
                 player_turn(player, enemy)
-            elif item_choice <= len(player.items):
+            elif item_choice < len(player.items):
                 print(f"used {player.items[item_choice - 1].name}")
                 player.heal(player.items[item_choice - 1])
         case _:
