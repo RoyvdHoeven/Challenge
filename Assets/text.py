@@ -1,5 +1,8 @@
 intro_text = "\nLong ago, the allfather Odin united the nine realms: Muspelheim, Niflheim, Vanaheim, Alfheim, Jotunheim, Niðavellir, Midgard and Asgard\nBut there was another secret tenth realm. This realm was used to cast away odin's foes and was later cut away from the world tree\nto be condemed to drift away in exile for eternity.\n\nBut recently his enemies have grown an formidable army and are wreaking havoc in the tenth realm\nBecause of this, odin has sent you, a prisoner, to fix his problems\ndefeat the Goblin king Yagluth and earn your freedom\n\n"
+# TODO finish this
 battle_info = """
+Battle Info
+
 
 """
 wordle_info = """
@@ -18,7 +21,7 @@ Good luck!\n
 
 meadows_1 = "You wake up in a meadow, a flat land surroundend by a forest, you see a hut in the distance\n"
 meadows_2 = "You approach the hut, as you come closer you hear rustling coming from a bush next to you.\nA wild boar jumps out and attacks you\n"
-meadows_3 = "You stand in front of the hut,\nlooks like a witch lives here,\nyou look around and notice a pond in the distance.\n"
+meadows_3 = "You stand in front of the hut, looks like a witch lives here, you look around and notice a pond in the distance.\n"
 meadows_4 = "You arrive at the pond, you see a fishing rod laying on the ground and you see a witch sitting a little further on a log\n"
 meadows_5 = "Inside the hut you see a chest in the corner of the room,\nyou smell a pot brewing and you hear something whining,\nyou dont know where the sound comes from\n"
 

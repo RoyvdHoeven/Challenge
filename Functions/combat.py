@@ -9,11 +9,9 @@ def battle(player: player, enemy) -> bool:
     print(ascii_text[0])
     sleep(1)
     print_text(f"You've encountered an {enemy["name"]}\n", 0.05)
-    sleep(1)
     # checks if the player and enemy are alive
     while player.hp > 0 and enemy["hp"] > 0:
-        print(f"Your HP: {player.hp}/{player.max_hp}, Armour: {player.ac}, {enemy["name"]} HP: {enemy["hp"]}, Armour: {enemy["ac"]}, Power: {enemy["damage"]}")
-        sleep(1)
+        print_text(f"Your HP: {player.hp}/{player.max_hp}, Armour: {player.ac}, {enemy["name"]} HP: {enemy["hp"]}, Armour: {enemy["ac"]}, Power: {enemy["damage"]}\n", 0.05)
         # checks who goes first
         if player.speed < enemy["speed"]:
             enemy_turn(player, enemy)
@@ -32,10 +30,10 @@ def battle(player: player, enemy) -> bool:
         return False
     # win condition
     elif enemy["hp"] <= 0:
-        print(f"{enemy["name"]} died")
+        print_text(f"{enemy["name"]} died\n", 0.05)
         sleep(2)
         print(ascii_text[2])
-        print_text(f"You gained {enemy["xp"]}xp\n", 0.075)
+        print_text(f"You gained {enemy["xp"]}xp\n", 0.05)
         player.xp += enemy["xp"]
         # levels up player if reached the needed xp
         while True:
@@ -47,25 +45,19 @@ def battle(player: player, enemy) -> bool:
 
 def enemy_turn(player: player, enemy):
     value = d20()
-    sleep(1)
-    print(f"{enemy["name"]} rolled: {value}")
+    print_text(f"{enemy["name"]} rolled: {value}\n", 0.05)
     if value >= player.ac:
-        sleep(1)
-        print(f"{enemy["name"]} hit")
+        print_text(f"{enemy["name"]} hit\n", 0.05)
         damage = d8()
-        sleep(1)
-        print(f"{enemy["name"]} rolled {damage}")
+        print_text(f"{enemy["name"]} rolled {damage}\n", 0.05)
         if value == 20:
             damage = damage * 2 
-        sleep(1)
-        print(f"{enemy["name"]} does {damage + enemy["damage"]} damage")
+        print_text(f"{enemy["name"]} does {damage + enemy["damage"]} damage\n", 0.05)
         player.hp -= damage + enemy["damage"]
-        sleep(1)
-        print(f"{player.name}'s remaining hp: {player.hp}")
-        sleep(1)
+        print_text(f"{player.name}'s remaining hp: {player.hp}\n", 0.05)
     else:
-        sleep(1)
         print("missed")
+        sleep(1)
 
 
 def player_turn(player: player, enemy):
@@ -76,28 +68,21 @@ def player_turn(player: player, enemy):
             case "1":
                 input("press enter to roll d20 for hit:")
                 value = d20()
-                sleep(1)
-                print(f"{player.name} rolled {value}")
+                print_text(f"{player.name} rolled {value}\n", 0.05)
                 if value >= enemy["ac"]:
-                    sleep(1)
-                    print("critical hit!!!" if value == 20 else f"{player.name} hit")
-                    sleep(1)
+                    print_text("critical hit!!!\n" if value == 20 else f"{player.name} hit\n", 0.05)
                     input("press enter to roll d8 for damage:")
                     damage = d8()
-                    sleep(1)
-                    print(f"{player.name} rolled {damage}")
+                    print_text(f"{player.name} rolled {damage}\n", 0.05)
                     if value == 20:
                         damage *= 2
-                    sleep(1)
-                    print(f"{player.name} do {damage + player.equiped["damage"]} damage")
+                    print_text(f"{player.name} do {damage + player.equiped["damage"]} damage\n", 0.05)
                     enemy["hp"] -= damage + player.equiped["damage"]
-                    sleep(1)
-                    print(f"{enemy["name"]} remaining hp: {enemy["hp"]}")
-                    sleep(1)
+                    print_text(f"{enemy["name"]} remaining hp: {enemy["hp"]}\n", 0.05)
                     return
                 else:
-                    sleep(1)
                     print("missed")
+                    sleep(1)
                     return
             case "2":
                 i = 1
@@ -110,4 +95,4 @@ def player_turn(player: player, enemy):
                     print(f"used {player.consumables[item_choice - 1]["name"]}")
                     player.heal(player.consumables[item_choice - 1])
             case "3":
-                print_text(battle_info, 0.075)
+                print_text(battle_info, 0.05)
