@@ -31,8 +31,9 @@ class player:
     # function to level up the player and raise some stats with a random integer
     def level_up(self):
         self.level += 1
+        self.xp -= self.xp_needed
         print_text(f"You leveled up to level {self.level}\n", 0.075)
-        self.xp_needed *= 1.10
+        self.xp_needed = int(self.xp_needed * 1.10)
         self.max_hp += randint(1,5)
         self.hp = self.max_hp
         self.ac += randint(0,2)
@@ -59,7 +60,9 @@ class player:
                 weapon_count += 1
                 sleep(0.3)
             key_count = 1
-            print("Keyring")
+            print("Key items:")
+            if not self.keys:
+                print(" 0. Empty")
             for item in self.keys:
                 print(f" {item}")
                 key_count += 1

@@ -103,7 +103,7 @@ def player_turn(player: player, enemy):
                 i = 1
                 for item in player.consumables:
                     print(f"{i}. {item["name"]} +{item["healing"]}hp")
-                i += 1
+                    i += 1
                 print("0. Go back")
                 item_choice = int(input("What item do you want to use: "))
                 if item_choice <= len(player.consumables) and item_choice > 0:

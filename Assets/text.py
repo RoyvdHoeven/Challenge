@@ -29,7 +29,11 @@ witch_3 = "\033[34mGo away, you don't need anything from me anymore!\n\033[0m"
 witch_4 = "\033[34mYou want to know what is in my chest?\nI will never tell you!\n"
 
 witch_hut_1 = "You look into the pot and see a suspicious stew brewing inside\n"
-witch_hut_2 = "You eat the the suspicious stew, nothing much happens, but you do feel something in your pockets."
-witch_hut_3 = ""
+witch_hut_2 = "You eat the the suspicious stew, nothing much happens, but you do feel something in your pockets.\n"
+witch_hut_3 = """
+You use the key to open the chest, as you open the chest you hear a door lock behind you
+\033[34mI don't remember saying you could open that\033[0m
+\033[34mWhat do you think you're doing, care to explain?\033[0m\n
+"""
 
 
