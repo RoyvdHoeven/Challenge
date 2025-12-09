@@ -58,6 +58,11 @@ class player:
                 print(f" {weapon_count}.",item["name"], f"+{item["damage"]} Damage")
                 weapon_count += 1
                 sleep(0.3)
+            key_count = 1
+            print("Keyring")
+            for item in self.keys:
+                print(f" {item}")
+                key_count += 1
             match int(input("What do you want to do:\n1. Use consumable\n2. Equip weapon\n0. Go back\n")):
                 case 1:
                     # lets the player use an healing item

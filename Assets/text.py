@@ -18,13 +18,18 @@ Good luck!\n
 
 meadows_1 = "You wake up in a meadow, a flat land surroundend by a forest, you see a hut in the distance\n"
 meadows_2 = "You approach the hut, as you come closer you hear rustling coming from a bush next to you.\nA wild boar jumps out and attacks you\n"
-meadows_3 = "After defeating the wild boar you arrive at the hut, looks like a witch lives here, you look around and notice a pond in the distance.\n"
+meadows_3 = "You stand in front of the hut,\nlooks like a witch lives here,\nyou look around and notice a pond in the distance.\n"
 meadows_4 = "You arrive at the pond, you see a fishing rod laying on the ground and you see a witch sitting a little further on a log\n"
-meadows_5 = "Indside the hut you see a chest in the corner"
+meadows_5 = "Inside the hut you see a chest in the corner of the room,\nyou smell a pot brewing and you hear something whining,\nyou dont know where the sound comes from\n"
 
 
 witch_1 = "\033[34mWhat do you want?\nyou want to enter my hut?\nSure, only if you can beat my game!\n\033[0m"
 witch_2 = "\033[34mWhat!? You guessed it? Impossible! But fine. Here, have my key\n\033[0m"
 witch_3 = "\033[34mGo away, you don't need anything from me anymore!\n\033[0m"
+witch_4 = "\033[34mYou want to know what is in my chest?\nI will never tell you!\n"
+
+witch_hut_1 = "You look into the pot and see a suspicious stew brewing inside\n"
+witch_hut_2 = "You eat the the suspicious stew, nothing much happens, but you do feel something in your pockets."
+witch_hut_3 = ""
 
 

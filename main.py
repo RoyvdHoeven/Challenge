@@ -21,8 +21,10 @@ def main():
     main_character = player(player_name, 20, 20, 5, 4)
     main_character.consumables.append(healing_potion)
     main_character.weapons.append(wooden_stick)
-    if meadows(main_character):
-        print_text("Game over")
+    if not meadows(main_character):
+        print_text("Game over", 0.075)
+    else:
+        print_text("The end", 0.080)
 
 
 main()

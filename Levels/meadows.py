@@ -10,17 +10,20 @@ def meadows(player: player) -> bool:
     position = 1
     fishing_pool = [{"name": "Large Healing Potion", "healing": 10}, {"name": "Healing Potion", "healing": 5}, "Seahorse", "Common carp", "Goldfish", "Leather boot", "Bluegill", "Catfish"]
     fishing_rod_durability = 3
+    checked_chest = False
     while True:
         match position:
             case 1:
                 print_text(meadows_1, 0.075)
                 sleep(0.3)
-                choice = input("What will you do:\n1. Approach the hut\n2. Check inventory\n: ")
+                choice = input("What will you do:\n1. Approach the hut\n2. Check inventory(Recommended)\n: ")
                 match choice:
                     case "1":
                         print_text(meadows_2, 0.075)
                         if battle(player, {"name": "Wild Boar", "hp": 10, "ac": 3, "damage": 0, "speed": 3, "xp": 30}):
                             position = 2
+                        else:
+                            return False
                     case "2":
                         player.inventory()
             case 2:
@@ -69,13 +72,40 @@ def meadows(player: player) -> bool:
                                 print("\nYou put the key in your inventory.\n")
                                 player.keys.append("Hut key")
                             else:
-                                battle(player, {"name": "Wild Boar", "hp": 10, "ac": 3, "damage": 0, "speed": 3, "xp": 30})
+                                if not battle(player, {"name": "Wild Boar", "hp": 10, "ac": 3, "damage": 0, "speed": 3, "xp": 30}):
+                                    return False
                         else:
-                            print_text(witch_3, 0.05)
+                            if checked_chest:
+                                print_text(witch_4, 0.05)
+                            else:
+                                print_text(witch_3, 0.05)
                     case "3":
                         position = 2
                     case "4":
                         player.inventory()
             case 4:
                 print_text(meadows_5, 0.075)
-                choice = input("")
+                choice = input("What will you do:\n1. Investigate The Brewing pot\n2. Open the chest\n3. Go back outside\n4. Check inventory\n")
+                match choice:
+                    case "1":
+                        if "Witch's Chest key" not in player.keys:
+                            print_text(witch_hut_1, 0.075)
+                            choice = input("Do you want to eat the suspicious stew? (y)Yes or (n)No\n")
+                            match choice.lower():
+                                case "y":
+                                    print_text(witch_hut_2, 0.075)
+                                    player.keys.append("Witch's Chest key")
+                                case _:
+                                    pass
+                        else:
+                            print_text("You already ate from the stew.\n", 0.075)
+                    case "2":
+                        if "Witch's Chest key" in player.keys:
+                            # print_text(witch_hut_3, 0.075)
+                            return True
+                        else:
+                            print_text("You tried to open the chest, but it is locked.\n", 0.075)
+                    case "3":
+                        position = 2
+                    case "4":
+                        player.inventory()

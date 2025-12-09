@@ -33,7 +33,3 @@ def wordle(word: str) -> bool:
         else:
             print_text("Only guess a word using 5 letters!\n", 0.075)
     return False
-
-
-def minigame2():
-    return
