@@ -72,7 +72,7 @@ def meadows(player: player) -> bool:
                             sleep(0.75)
                             if wordle("witch"):
                                 print_text(witch_2, 0.05)
-                                print("\nYou put the key in your inventory.\n")
+                                print("You put the key in your inventory.\n")
                                 player.keys.append("Hut key")
                             else:
                                 if not battle(player, {"name": "Wild Boar", "hp": 10, "ac": 3, "damage": 0, "speed": 3, "xp": 30}):
@@ -111,11 +111,11 @@ def meadows(player: player) -> bool:
                                 case "1":
                                     print_text("\033[34mChecking for what?\n Checking for things to steal?\n\033[0m", 0.05)
                                 case "2":
-                                    input(print_text("Roll d20 for peception check(10 needed): ", 0.05))
+                                    input("Roll d20 for peception check(10 needed): ")
                                     roll = d20()
                                     print_text(f"You rolled {roll}\n", 0.05)
                                     if roll >= 10:
-                                        print_text("Perception check succesfull", 0.05)
+                                        print_text("Perception check succesfull\n", 0.05)
                                         fight = False
                                         print_text("\033[34moh...well, get up then and stay away from my stuff\n\033[0m", 0.05)
                                         print_text("The witch walks out and leaves you alone in the hut again", 0.05)
